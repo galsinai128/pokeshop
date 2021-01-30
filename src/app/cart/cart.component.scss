@@ -1,0 +1,31 @@
+.pokemon-list {
+    &__title {
+        font-size: x-large;
+        margin: 2rem;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+    }
+}
+
+.clear-cart-btn{
+    background-color: #71999a;
+    color: white;
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+
+.clear-cart-btn:hover{
+    cursor: pointer;
+}

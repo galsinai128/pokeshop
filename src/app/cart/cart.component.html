@@ -1,0 +1,4 @@
+<p *ngIf="pokemonsOnCart.length"  class="pokemon-list__title">Added to cart ({{pokemonsOnCart.length}}):</p>
+<p *ngIf="!pokemonsOnCart.length"  class="pokemon-list__title">Cart is empty</p>
+<app-pokemon-list [pokemons]="pokemonsOnCart" [cartAction]="removeFromCart" ></app-pokemon-list>
+<div *ngIf="pokemonsOnCart.length" (click)="openDialog()" class="clear-cart-btn">Clear</div>

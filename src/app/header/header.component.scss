@@ -1,0 +1,29 @@
+.header {
+    &__container {
+        background-color: black;
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__item {
+        color: white;
+        cursor: pointer;
+        &:hover {
+            color: pink;
+        }
+    }
+}
+
+.cart-header-badge{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #f20605;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 47px;
+    bottom: 22px;
+}
