@@ -71,9 +71,7 @@ export class PokemonService {
     this.pokemonOnCartList.next(pokemonOnCartListCopy);
 
     //save cart on login
-    if (isLoggedIn && isLoggedIn.source && isLoggedIn.source.value){
-      this.saveCartToStorage(pokemonOnCartListCopy);
-    }
+    this.saveWhenLogin(pokemonOnCartListCopy,isLoggedIn)
   }
 
   public removeFromCart(pokemon: Pokemon, isLoggedIn: any){
@@ -93,9 +91,7 @@ export class PokemonService {
     this.pokemonOnCartList.next(pokemonOnCartListCopy);
 
     //save cart on login
-    if (isLoggedIn && isLoggedIn.source && isLoggedIn.source.value){
-      this.saveCartToStorage(pokemonOnCartListCopy);
-    }
+    this.saveWhenLogin(pokemonOnCartListCopy,isLoggedIn)
   }
 
   public clearCart(isLoggedIn: any){
@@ -108,9 +104,7 @@ export class PokemonService {
     this.pokemonOnCartList.next([]);
 
     //save cart on login
-    if (isLoggedIn && isLoggedIn.source && isLoggedIn.source.value){
-      this.saveCartToStorage([]);
-    }
+    this.saveWhenLogin([],isLoggedIn)
   }
   
   public loadCartFromStorage(){
@@ -132,6 +126,12 @@ export class PokemonService {
 
   public saveCartToStorage(cart: Pokemon[]){
     localStorage.setItem('cart', JSON.stringify(cart));
+  }
+
+  public saveWhenLogin(cart: Pokemon[], isLoggedIn: any){
+    if (isLoggedIn && isLoggedIn.source && isLoggedIn.source.value){
+      this.saveCartToStorage(cart);
+    }
   }
 
 }

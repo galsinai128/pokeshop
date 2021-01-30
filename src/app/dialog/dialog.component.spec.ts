@@ -30,4 +30,11 @@ describe('DialogComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render dialog title in a p tag', async(() => {
+    const fixture = TestBed.createComponent(DialogComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('p').textContent).toContain('Are you sure you want to clear your cart?');
+  }));
 });
